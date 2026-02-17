@@ -160,32 +160,46 @@
             align-items: center;
             position: relative;
             padding: 8rem 0 6rem;
-            background: linear-gradient(165deg, #ffffff 0%, var(--color-cream) 50%, rgba(180, 211, 53, 0.08) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(240,244,240,0.88) 100%), 
+                        url('images/hero.jpg');
+            background-size: cover;
+            background-position: center;
             overflow: hidden;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 150%;
-            background: radial-gradient(ellipse at center, rgba(59, 191, 173, 0.06) 0%, transparent 70%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(59, 191, 173, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
         .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
             position: relative;
             z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero-text {
             animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-eyebrow {
+            justify-content: center;
+        }
+
+        .hero-description {
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @keyframes fadeInUp {
@@ -332,7 +346,11 @@
         /* Approach Section */
         .approach {
             padding: 8rem 0;
-            background: white;
+            background: linear-gradient(rgba(255,255,255,0.97), rgba(255,255,255,0.97)), 
+                        url('images/forest.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .section-header {
@@ -402,6 +420,22 @@
             opacity: 1;
         }
 
+        .approach-card.featured {
+            background: linear-gradient(135deg, rgba(180, 211, 53, 0.1) 0%, rgba(59, 191, 173, 0.1) 100%);
+            border: 2px solid var(--color-lime);
+            box-shadow: 0 8px 30px rgba(180, 211, 53, 0.15);
+        }
+
+        .approach-card.featured::before {
+            opacity: 1;
+        }
+
+        .approach-card.featured .approach-number {
+            background: var(--gradient-spectrum);
+            color: white;
+            transform: scale(1.1);
+        }
+
         .approach-number {
             display: inline-flex;
             align-items: center;
@@ -418,10 +452,11 @@
 
         .approach-card h3 {
             font-family: var(--font-display);
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: var(--color-primary);
             margin-bottom: 0.75rem;
             font-weight: 700;
+            line-height: 1.3;
         }
 
         .approach-card p {
@@ -433,13 +468,16 @@
         /* Partners Section */
         .partners {
             padding: 6rem 0;
-            background: var(--color-cream);
+            background: linear-gradient(rgba(240,244,240,0.95), rgba(240,244,240,0.95)), 
+                        url('images/river.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .partners-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
         .partner-card {
@@ -638,6 +676,20 @@
 
         .resource-card:hover::before {
             opacity: 1;
+        }
+
+        .resource-card.featured {
+            background: rgba(180, 211, 53, 0.15);
+            border: 2px solid var(--color-lime);
+        }
+
+        .resource-card.featured::before {
+            opacity: 1;
+            height: 4px;
+        }
+
+        .resource-card.featured .resource-icon {
+            background: rgba(180, 211, 53, 0.3);
         }
 
         .resource-icon {
@@ -1044,7 +1096,6 @@
             <ul class="nav-links">
                 <li><a href="#approach">Our Approach</a></li>
                 <li><a href="#partners">Partners</a></li>
-                <li><a href="#advisors">Advisors</a></li>
                 <li><a href="#resources">Resources</a></li>
                 <li><a href="#signup" class="nav-cta">Get Started</a></li>
             </ul>
@@ -1069,29 +1120,6 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
-                <div class="hero-visual">
-                    <div class="hero-card">
-                        <h3 class="hero-card-title">Integrated Capital Impact</h3>
-                        <div class="hero-stat-grid">
-                            <div class="hero-stat">
-                                <div class="hero-stat-value">100%</div>
-                                <div class="hero-stat-label">Values Alignment</div>
-                            </div>
-                            <div class="hero-stat">
-                                <div class="hero-stat-value">7</div>
-                                <div class="hero-stat-label">Core Practices</div>
-                            </div>
-                            <div class="hero-stat">
-                                <div class="hero-stat-value">Full</div>
-                                <div class="hero-stat-label">Spectrum Approach</div>
-                            </div>
-                            <div class="hero-stat">
-                                <div class="hero-stat-value">Aligned</div>
-                                <div class="hero-stat-label">Partner Network</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1102,42 +1130,50 @@
             <div class="section-header">
                 <div class="section-eyebrow">Our Approach</div>
                 <h2 class="section-title">Purpose-Driven Capital Strategy</h2>
-                <p class="section-description">We work with you to ensure integrated, holistic solutions so that every element of guidance is aligned with your impact goals.</p>
+                <p class="section-description">We work with you to ensure integrated, holistic solutions so that every element of guidance you receive is aligned with your impact goals — and your resources are managed to care for and support what is essential.</p>
             </div>
             <div class="approach-grid">
                 <div class="approach-card">
                     <span class="approach-number">1</span>
-                    <h3>Clarify Purpose</h3>
-                    <p>Define what matters most, the transformation you seek, and the impact commitments that guide all decisions.</p>
+                    <h3>Clarify Purpose & Develop Your Impact Strategy</h3>
+                    <p>We begin by clarifying or affirming what is most important to you and/or your institution, the change and transformation you seek to advance, the power and influence your capital holds, and the impact commitments that will guide all future decisions. This becomes the foundation for all capital strategy work.</p>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">2</span>
-                    <h3>Thrive with Enough</h3>
-                    <p>Identify how much is enough to thrive, clarify which resources must grow versus sustain.</p>
+                    <h3>Thrive Because You Have Enough</h3>
+                    <p>In coordination with aligned financial planners and tax professionals, we help you identify how much is enough to ensure you, your family, or your institution can thrive, clarify which resources must grow and which must sustain, and ensure that stewardship needs are integrated with impact commitments. Purpose and thriving are addressed together — not separately.</p>
                 </div>
-                <div class="approach-card">
+                <div class="approach-card featured">
                     <span class="approach-number">3</span>
-                    <h3>Capital Allocation</h3>
-                    <p>Design allocation plans aligned with your impact strategy, clarifying the role of each pool of capital.</p>
+                    <h3>FS Capital Dashboard</h3>
+                    <p>See, design and guide the waterways through which your capital flows, clarifying the role of each pool of capital. Working alongside our aligned Registered Investment Advisor (RIA) partners we design a capital allocation plan aligned with your impact strategy, clarify the role of each pool of capital, and align risk, return, liquidity, and time horizons with purpose.</p>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">4</span>
-                    <h3>Integrated-Capital IPS™</h3>
-                    <p>Define impact intent, establish criteria, and ensure coherence across your whole portfolio.</p>
+                    <h3>Integrated-Capital IPS (IC-IPS)™</h3>
+                    <p>Develop detailed impact plans by pool of capital. For each pool within your allocation plan, we define impact intent and priorities, establish criteria for opportunities and managers, clarify strategic parameters, and ensure coherence across the whole portfolio.</p>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">5</span>
-                    <h3>Implementation</h3>
-                    <p>Translate impact plans into portfolio strategies with aligned financial advisory partners.</p>
+                    <h3>Portfolio Strategy & Implementation</h3>
+                    <p>We work with you and aligned financial advisory partners and managers for each pool of capital to translate impact plans into portfolio strategies, support decision-making and opportunity evaluation, and ensure implementation remains aligned with purpose.</p>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">6</span>
-                    <h3>Monitor & Evolve</h3>
-                    <p>Establish impact monitoring, create reflection cadences, and adapt as learning evolves.</p>
+                    <h3>Monitor, Evaluate & Evolve</h3>
+                    <p>We support you to establish appropriate impact monitoring practices, create review and reflection cadences, and adapt strategy as learning and conditions evolve.</p>
+                </div>
+                <div class="approach-card">
+                    <span class="approach-number">7</span>
+                    <h3>Integrated Advisory</h3>
+                    <p>You may already have trusted financial service providers who need support implementing your impact directives, need a full suite of aligned partners to manage significant new resources, or be seeking a new partner for a specific component of your capital strategy. Whatever the case, Full Spectrum Advisors ensures your financial ecosystem operates in alignment — so that all guidance supports your impact goals and protects what is essential to your thriving.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Image Break: Lake reflection -->
+    <section class="image-break" style="height: 300px; background: linear-gradient(rgba(30,58,95,0.3), rgba(30,58,95,0.5)), url('images/lake.jpg'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
     <!-- Partners Section -->
     <section class="partners" id="partners">
@@ -1151,16 +1187,20 @@
                 <div class="partner-card">
                     <div class="partner-logo">
                         <div class="partner-logo-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        </div>
+                        <span class="partner-name">Blueprint</span>
+                    </div>
+                    <p>Integrated capital infrastructure for movement finance, coordinating blended capital flows across aligned networks to meet community-identified needs.</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <div class="partner-logo-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                         </div>
                         <span class="partner-name">Full Spectrum Labs</span>
                     </div>
                     <p>Partners with Full Spectrum Advisors to accelerate the flow of capital to community priorities, supporting communities to scale community-owned economic solutions.</p>
-                    <div class="partner-focus">
-                        <span class="partner-tag">Community Solutions</span>
-                        <span class="partner-tag">Field Insight</span>
-                        <span class="partner-tag">Economic Infrastructure</span>
-                    </div>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo">
@@ -1170,48 +1210,6 @@
                         <span class="partner-name">Kinflow</span>
                     </div>
                     <p>A collaborative of wealth navigators, legal and financial strategists, spiritual guides, and movement-rooted advisors for multi-generational capital stewards.</p>
-                    <div class="partner-focus">
-                        <span class="partner-tag">Family Offices</span>
-                        <span class="partner-tag">Wealth Navigation</span>
-                        <span class="partner-tag">Justice-Aligned</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Advisors Section -->
-    <section class="advisors" id="advisors">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-eyebrow">Our Advisors</div>
-                <h2 class="section-title">Meet the Team</h2>
-                <p class="section-description">Experienced practitioners guiding capital stewards toward deeper alignment and impact.</p>
-            </div>
-            <div class="advisors-grid">
-                <div class="advisor-card">
-                    <div class="advisor-photo">TJ</div>
-                    <div class="advisor-name">Taj James</div>
-                    <div class="advisor-role">Founding Advisor</div>
-                    <div class="advisor-org">Full Spectrum Group</div>
-                </div>
-                <div class="advisor-card">
-                    <div class="advisor-photo">+</div>
-                    <div class="advisor-name">Advisor Name</div>
-                    <div class="advisor-role">Strategic Advisor</div>
-                    <div class="advisor-org">Organization</div>
-                </div>
-                <div class="advisor-card">
-                    <div class="advisor-photo">+</div>
-                    <div class="advisor-name">Advisor Name</div>
-                    <div class="advisor-role">Impact Advisor</div>
-                    <div class="advisor-org">Organization</div>
-                </div>
-                <div class="advisor-card">
-                    <div class="advisor-photo">+</div>
-                    <div class="advisor-name">Advisor Name</div>
-                    <div class="advisor-role">Capital Strategy</div>
-                    <div class="advisor-org">Organization</div>
                 </div>
             </div>
         </div>
@@ -1237,12 +1235,12 @@
                         Members Only
                     </div>
                 </div>
-                <div class="resource-card">
+                <div class="resource-card featured">
                     <div class="resource-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
                     </div>
-                    <h4 class="resource-title">Portfolio Alignment Guide</h4>
-                    <p class="resource-desc">Step-by-step guide to align your portfolio with purpose and values.</p>
+                    <h4 class="resource-title">FS Capital Dashboard</h4>
+                    <p class="resource-desc">See, design and guide the waterways through which your capital flows. Our core tool for visualizing and managing your full spectrum capital strategy.</p>
                     <div class="resource-lock">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                         Members Only
@@ -1250,10 +1248,10 @@
                 </div>
                 <div class="resource-card">
                     <div class="resource-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
-                    <h4 class="resource-title">Quarterly Briefings</h4>
-                    <p class="resource-desc">Live sessions with advisors on market trends and impact opportunities.</p>
+                    <h4 class="resource-title">Learning Community</h4>
+                    <p class="resource-desc">Peer exchanges and learning opportunities across the aligned capital ecosystem.</p>
                     <div class="resource-lock">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                         Members Only
@@ -1262,6 +1260,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Break: Himalayas -->
+    <section class="image-break" style="height: 350px; background: linear-gradient(rgba(30,58,95,0.2), rgba(30,58,95,0.4)), url('images/mountains.jpg'); background-size: cover; background-position: center; background-attachment: fixed;"></section>
 
     <!-- Signup Section -->
     <section class="signup" id="signup">
@@ -1355,7 +1356,6 @@
                     <ul>
                         <li><a href="#approach">Our Approach</a></li>
                         <li><a href="#partners">Partners</a></li>
-                        <li><a href="#advisors">Advisors</a></li>
                         <li><a href="#resources">Resources</a></li>
                     </ul>
                 </div>
