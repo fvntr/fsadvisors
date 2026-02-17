@@ -433,9 +433,9 @@
         }
 
         .approach-card.featured {
-            background: linear-gradient(135deg, rgba(180, 211, 53, 0.1) 0%, rgba(59, 191, 173, 0.1) 100%);
-            border: 2px solid var(--color-lime);
-            box-shadow: 0 8px 30px rgba(180, 211, 53, 0.15);
+            background: var(--color-light);
+            border: 1px solid var(--color-lime);
+            box-shadow: 0 4px 20px rgba(180, 211, 53, 0.1);
         }
 
         .approach-card.featured::before {
@@ -445,7 +445,39 @@
         .approach-card.featured .approach-number {
             background: var(--gradient-spectrum);
             color: white;
-            transform: scale(1.1);
+        }
+
+        .approach-list {
+            list-style: none;
+            margin: 0.75rem 0;
+            padding: 0;
+        }
+
+        .approach-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        .approach-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 6px;
+            height: 6px;
+            background: var(--color-lime);
+            border-radius: 50%;
+        }
+
+        .approach-note {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            font-style: italic;
         }
 
         .approach-number {
@@ -520,8 +552,17 @@
         .partner-logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: center;
             margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+
+        .partner-logo-img {
+            max-width: 180px;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
         }
 
         .partner-logo-icon {
@@ -550,7 +591,7 @@
         .partner-card p {
             color: var(--color-text-light);
             line-height: 1.7;
-            margin-bottom: 1.25rem;
+            text-align: center;
         }
 
         .partner-focus {
@@ -1167,37 +1208,78 @@
                 <div class="approach-card">
                     <span class="approach-number">1</span>
                     <h3>Clarify Purpose & Develop Your Impact Strategy</h3>
-                    <p>We begin by clarifying or affirming what is most important to you and/or your institution, the change and transformation you seek to advance, the power and influence your capital holds, and the impact commitments that will guide all future decisions. This becomes the foundation for all capital strategy work.</p>
+                    <p>We begin by clarifying or affirming:</p>
+                    <ul class="approach-list">
+                        <li>What is most important to you and/or your institution</li>
+                        <li>The change and transformation you seek to advance</li>
+                        <li>The power and influence your capital holds</li>
+                        <li>The impact commitments that will guide all future decisions</li>
+                    </ul>
+                    <p class="approach-note">This becomes the foundation for all capital strategy work.</p>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">2</span>
                     <h3>Thrive Because You Have Enough</h3>
-                    <p>In coordination with aligned financial planners and tax professionals, we help you identify how much is enough to ensure you, your family, or your institution can thrive, clarify which resources must grow and which must sustain, and ensure that stewardship needs are integrated with impact commitments. Purpose and thriving are addressed together — not separately.</p>
+                    <p>In coordination with aligned financial planners and tax professionals, we help you:</p>
+                    <ul class="approach-list">
+                        <li>Identify how much is enough to ensure you, your family, or your institution can thrive</li>
+                        <li>Clarify which resources must grow and which must sustain</li>
+                        <li>Ensure that stewardship needs are integrated with impact commitments</li>
+                    </ul>
+                    <p class="approach-note">Purpose and thriving are addressed together — not separately.</p>
                 </div>
                 <div class="approach-card featured">
                     <span class="approach-number">3</span>
                     <h3>FS Capital Dashboard</h3>
-                    <p>See, design and guide the waterways through which your capital flows, clarifying the role of each pool of capital. Working alongside our aligned Registered Investment Advisor (RIA) partners we design a capital allocation plan aligned with your impact strategy, clarify the role of each pool of capital, and align risk, return, liquidity, and time horizons with purpose.</p>
+                    <p>See, design and guide the waterways through which your capital flows, clarifying the role of each pool of capital.</p>
+                    <p style="margin-top: 0.75rem;">Working alongside our aligned RIA partners we:</p>
+                    <ul class="approach-list">
+                        <li>Design a capital allocation plan aligned with your impact strategy</li>
+                        <li>Clarify the role of each pool of capital</li>
+                        <li>Align risk, return, liquidity, and time horizons with purpose</li>
+                    </ul>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">4</span>
                     <h3>Integrated-Capital IPS (IC-IPS)™</h3>
-                    <p>Develop detailed impact plans by pool of capital. For each pool within your allocation plan, we define impact intent and priorities, establish criteria for opportunities and managers, clarify strategic parameters, and ensure coherence across the whole portfolio.</p>
+                    <p>Develop detailed impact plans by pool of capital. For each pool within your allocation plan, we:</p>
+                    <ul class="approach-list">
+                        <li>Define impact intent and priorities</li>
+                        <li>Establish criteria for opportunities and managers</li>
+                        <li>Clarify strategic parameters</li>
+                        <li>Ensure coherence across the whole portfolio</li>
+                    </ul>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">5</span>
                     <h3>Portfolio Strategy & Implementation</h3>
-                    <p>We work with you and aligned financial advisory partners and managers for each pool of capital to translate impact plans into portfolio strategies, support decision-making and opportunity evaluation, and ensure implementation remains aligned with purpose.</p>
+                    <p>We work with you and aligned financial advisory partners and managers for each pool of capital to:</p>
+                    <ul class="approach-list">
+                        <li>Translate impact plans into portfolio strategies</li>
+                        <li>Support decision-making and opportunity evaluation</li>
+                        <li>Ensure implementation remains aligned with purpose</li>
+                    </ul>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">6</span>
                     <h3>Monitor, Evaluate & Evolve</h3>
-                    <p>We support you to establish appropriate impact monitoring practices, create review and reflection cadences, and adapt strategy as learning and conditions evolve.</p>
+                    <p>We support you to:</p>
+                    <ul class="approach-list">
+                        <li>Establish appropriate impact monitoring practices</li>
+                        <li>Create review and reflection cadences</li>
+                        <li>Adapt strategy as learning and conditions evolve</li>
+                    </ul>
                 </div>
                 <div class="approach-card">
                     <span class="approach-number">7</span>
                     <h3>Integrated Advisory</h3>
-                    <p>You may already have trusted financial service providers who need support implementing your impact directives, need a full suite of aligned partners to manage significant new resources, or be seeking a new partner for a specific component of your capital strategy. Whatever the case, Full Spectrum Advisors ensures your financial ecosystem operates in alignment — so that all guidance supports your impact goals and protects what is essential to your thriving.</p>
+                    <p>You may:</p>
+                    <ul class="approach-list">
+                        <li>Already have trusted financial service providers who need support implementing your impact directives</li>
+                        <li>Need a full suite of aligned partners to manage significant new resources</li>
+                        <li>Be seeking a new partner for a specific component of your capital strategy</li>
+                    </ul>
+                    <p class="approach-note">Whatever the case, Full Spectrum Advisors ensures your financial ecosystem operates in alignment — so that all guidance supports your impact goals and protects what is essential to your thriving.</p>
                 </div>
             </div>
         </div>
@@ -1214,28 +1296,19 @@
             <div class="partners-grid">
                 <div class="partner-card">
                     <div class="partner-logo">
-                        <div class="partner-logo-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                        </div>
-                        <span class="partner-name">Blueprint</span>
+                        <img src="images/blueprint.png" alt="Blueprint" class="partner-logo-img">
                     </div>
                     <p>Integrated capital infrastructure for movement finance, coordinating blended capital flows across aligned networks to meet community-identified needs.</p>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo">
-                        <div class="partner-logo-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                        </div>
-                        <span class="partner-name">Full Spectrum Labs</span>
+                        <img src="images/fslabs.png" alt="Full Spectrum Labs" class="partner-logo-img">
                     </div>
                     <p>Partners with Full Spectrum Advisors to accelerate the flow of capital to community priorities, supporting communities to scale community-owned economic solutions.</p>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo">
-                        <div class="partner-logo-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <span class="partner-name">Kinflow</span>
+                        <img src="images/kinflow.png" alt="Kinflow" class="partner-logo-img">
                     </div>
                     <p>A collaborative of wealth navigators, legal and financial strategists, spiritual guides, and movement-rooted advisors for multi-generational capital stewards.</p>
                 </div>
