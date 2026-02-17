@@ -384,17 +384,29 @@
 
         .approach-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
         }
 
         .approach-card {
             background: var(--color-light);
             border-radius: 12px;
-            padding: 2.25rem;
+            padding: 2rem;
             transition: all 0.3s ease;
             border: 1px solid transparent;
             position: relative;
+            grid-column: span 3;
+        }
+
+        /* Second row: 3 cards centered */
+        .approach-card:nth-child(5) {
+            grid-column: 2 / 5;
+        }
+        .approach-card:nth-child(6) {
+            grid-column: 5 / 8;
+        }
+        .approach-card:nth-child(7) {
+            grid-column: 8 / 11;
         }
 
         .approach-card::before {
@@ -1002,6 +1014,14 @@
             .approach-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .approach-card {
+                grid-column: span 1 !important;
+            }
+            
+            .approach-card:nth-child(7) {
+                grid-column: 1 / -1 !important;
+            }
 
             .advisors-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1034,6 +1054,11 @@
             .resources-grid,
             .partners-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .approach-card,
+            .approach-card:nth-child(7) {
+                grid-column: span 1 !important;
             }
 
             .form-row {
