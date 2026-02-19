@@ -1425,7 +1425,7 @@
                             <label for="message">What brings you to Full Spectrum Advisors?</label>
                             <textarea id="message" name="message" placeholder="Tell us about your impact goals or questions..."></textarea>
                         </div>
-                        <button type="submit" class="form-submit">Request Conversation</button>
+                        <button type="submit" class="form-submit" id="submitBtn">Request Conversation</button>
                         <p class="form-note">We'll respond within 2 business days to schedule your intro call.</p>
                     </form>
                     <div class="form-success" id="formSuccess">
@@ -1487,26 +1487,42 @@
         // Form submission
         const form = document.getElementById('signupForm');
         const formSuccess = document.getElementById('formSuccess');
+        const submitBtn = document.getElementById('submitBtn');
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            
-            // Log data (replace with actual submission)
-            console.log('Form submitted:', data);
-            
-            // Show success message
+
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const data = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                organization: document.getElementById('organization').value,
+                role: document.getElementById('role').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                await fetch("https://script.google.com/macros/s/AKfycbyVw7iRKB8eRA58SAD87FMJoouApawJwErwJPJ_JmsB6Rn8POZvW40Vv816gycvW7Z1Pg/exec", {
+                    method: "POST",
+                    body: JSON.stringify(data)
+                });
+            } catch (err) {
+                // Still show success — fetch to Apps Script often triggers a CORS error
+                // even when the email sends successfully
+            }
+
             form.classList.add('hidden');
             formSuccess.classList.add('show');
-            
-            // Optional: Reset after delay
+
             setTimeout(() => {
                 form.reset();
                 form.classList.remove('hidden');
                 formSuccess.classList.remove('show');
+                submitBtn.textContent = 'Request Conversation';
+                submitBtn.disabled = false;
             }, 5000);
         });
 
