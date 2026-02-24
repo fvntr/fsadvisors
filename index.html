@@ -524,6 +524,13 @@
             gap: 2rem;
         }
 
+        /* Partner card as a link */
+        a.partner-card {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .partner-card {
             background: white;
             border-radius: 16px;
@@ -547,6 +554,25 @@
         .partner-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 30px rgba(30, 58, 95, 0.1);
+        }
+
+        /* External link indicator on partner cards */
+        a.partner-card::after {
+            content: '↗';
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 1rem;
+            color: var(--color-lime);
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translate(-4px, 4px);
+            line-height: 1;
+        }
+
+        a.partner-card:hover::after {
+            opacity: 1;
+            transform: translate(0, 0);
         }
 
         .partner-logo {
@@ -1294,24 +1320,24 @@
                 <p class="section-description">We collaborate with partners to ensure capital strategies are grounded in community realities and whole-person stewardship.</p>
             </div>
             <div class="partners-grid">
-                <div class="partner-card">
+                <a href="https://blueprintfinance.org" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo">
                         <img src="images/blueprint.png" alt="Blueprint" class="partner-logo-img">
                     </div>
                     <p>Integrated capital infrastructure for movement finance, coordinating blended capital flows across aligned networks to meet community-identified needs.</p>
-                </div>
-                <div class="partner-card">
+                </a>
+                <a href="https://fullspectrum.group" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo">
                         <img src="images/fslabs.png" alt="Full Spectrum Labs" class="partner-logo-img">
                     </div>
                     <p>Partners with Full Spectrum Advisors to accelerate the flow of capital to community priorities, supporting communities to scale community-owned economic solutions.</p>
-                </div>
-                <div class="partner-card">
+                </a>
+                <a href="https://kinflow.com" target="_blank" rel="noopener noreferrer" class="partner-card">
                     <div class="partner-logo">
                         <img src="images/kinflow.png" alt="Kinflow" class="partner-logo-img">
                     </div>
                     <p>A collaborative of wealth navigators, legal and financial strategists, spiritual guides, and movement-rooted advisors for multi-generational capital stewards.</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
